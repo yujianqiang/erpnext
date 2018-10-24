@@ -115,6 +115,8 @@ frappe.ui.form.on("Item", {
 		['is_stock_item', 'has_serial_no', 'has_batch_no'].forEach((fieldname) => {
 			frm.set_df_property(fieldname, 'read_only', stock_exists);
 		});
+
+		frm.toggle_reqd('customer', frm.doc.is_customer_provided_item ? 1:0);
 	},
 
 	validate: function(frm){
