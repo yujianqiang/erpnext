@@ -149,8 +149,6 @@ class Item(WebsiteGenerator):
 			frappe.throw(_('"Customer Provided Item" cannot be Purchase Item also'))
 		if self.valuation_rate:
 			frappe.throw(_('"Customer Provided Item" cannot have Valuation Rate'))
-		if self.is_customer_provided_item and not self.customer:
-			frappe.throw(_(' Customer is mandatory for Customer Provided Item - {0}').format(self.item_code))
 
 	def add_price(self, price_list=None):
 		'''Add a new price'''
